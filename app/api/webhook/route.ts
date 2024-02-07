@@ -49,7 +49,6 @@ export async function POST(req: Request) {
   const data = payload.data;
 
   if (eventType === "user.created") {
-    console.log(data);
     const userData = {
       clerkId: data?.id,
       firstName: data?.first_name,
@@ -60,7 +59,6 @@ export async function POST(req: Request) {
     };
     console.log("User", userData);
   } else if (eventType === "user.updated") {
-    console.log(data);
     const userData = {
         clerkId: data?.id,
         firstName: data?.first_name,
