@@ -49,13 +49,14 @@ export async function POST(req: Request) {
   const data = payload.data;
 
   if (eventType === "user.created") {
+    console.log(data);
     const userData = {
       clerkId: data?.id,
       firstName: data?.first_name,
       lastName: data?.last_name,
       username: data?.username,
-      emailAddresses: data?.email_addresses,
       profilePhoto: data?.image_url,
+      emailAddresses: data?.email_addresses
     };
     console.log("User", userData);
   } else if (eventType === "user.updated") {
@@ -65,8 +66,8 @@ export async function POST(req: Request) {
         firstName: data?.first_name,
         lastName: data?.last_name,
         username: data?.username,
-        emailAddresses: data?.email_addresses,
         profilePhoto: data?.image_url,
+        emailAddresses: data?.email_addresses
     };
     console.log("User", userData);
   } else if (eventType === "user.deleted") {
